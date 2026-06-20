@@ -38,6 +38,48 @@ changing classifier behavior.
   `Valerii Iatsko <viatsko@viatsko.me>`. Local manual publishing can use
   `GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519.viatsko -o IdentitiesOnly=yes"`.
 
+When fixing a single bad live row, update the DB immediately, then fold the
+example into the model snapshot. Do not do a full DB export unless the user asks
+for it; targeted appends/updates to the existing Parquet are preferred during
+interactive cleanup. After any taxonomy/rule/model change:
+
+```bash
+# Generate labels from the committed Parquet snapshot, not from search keywords.
+.venv/bin/python - <<'PY'
+import json, pyarrow.parquet as pq
+t = pq.read_table("models/job_classifier/labels/job_training_dataset_v1.parquet")
+with open("/tmp/job_labels_from_parquet.jsonl", "w", encoding="utf-8") as f:
+    for r in t.to_pylist():
+        relevant = r.get("labeled_software_relevant")
+        if relevant is None:
+            relevant = bool(r.get("seed_software_relevant"))
+        out = {
+            "site": r.get("site"),
+            "source_job_id": r.get("source_job_id"),
+            "title": r.get("title") or "",
+            "company": r.get("company") or "",
+            "location": r.get("location") or "",
+            "search_keyword": r.get("search_keyword") or "",
+            "description": r.get("description") or "",
+            "software_relevant": bool(relevant),
+            "disciplines": r.get("labeled_disciplines") or [],
+            "archetypes": r.get("labeled_archetypes") or [],
+            "reason": r.get("label_reason") or r.get("seed_label_source") or "",
+        }
+        if not out["software_relevant"]:
+            out["disciplines"] = []
+            out["archetypes"] = []
+        f.write(json.dumps(out, ensure_ascii=False) + "\n")
+PY
+
+.venv/bin/python models/job_classifier/train.py \
+  --labels /tmp/job_labels_from_parquet.jsonl \
+  --out models/job_classifier/artifacts/job_classifier_v1.joblib
+.venv/bin/python models/job_classifier/evaluate.py \
+  --labels /tmp/job_labels_from_parquet.jsonl \
+  --out models/job_classifier/reports/eval_v1.json
+```
+
 ## Labeling Rules
 
 - Do not use scraper `search_keyword` as classifier evidence. It is only a
@@ -71,6 +113,15 @@ changing classifier behavior.
 - Teaching, tutoring, trainer, curriculum, and education-practitioner roles are
   non-software unless the actual role is software engineering, computer science,
   coding, developer education, or technical training.
+- Recent concrete false positives that must stay non-software:
+  `linkedin/4378413953` Online teachers for IAS Economics,
+  `linkedin/4378404972` Online teachers for IA2 History,
+  `linkedin/4431306664` Early Years Specialist Teacher,
+  `linkedin/4325886937` non-software engineering manager,
+  `linkedin/4401782851` non-software engineering role,
+  `linkedin/4429573603` non-software engineering-management/physical-engineering
+  role. These often arrived through broad software-looking `search_keyword`s;
+  ignore the keyword and trust the real title/description.
 - `Engineering Management` needs software-management context and clear
   people-management evidence for software/data/platform/security/ML teams.
   A generic manager title alone is not enough. Explicit senior engineering
@@ -111,8 +162,34 @@ OpenAI, Gemini, Bedrock, LangGraph, RAG, AI Agents, PyTorch, Ray, vector stores,
 Microsoft Fabric, Delta Lake, Iceberg, Glue, Kinesis, Pub/Sub, Cosmos DB, Azure
 Data Lake, and Fivetran.
 
-Technology extraction version `job-tech-extractor-v2` reprocesses rows from
+Technology extraction version `job-tech-extractor-v3` reprocesses rows from
 older extractor versions and rows that have an empty technology array despite a
 filled description. This is intentional: a listing can first arrive without a
 description, get `{}` stamped, then later gain text with technologies such as
-TypeScript.
+TypeScript. v3 also refreshes rows after the Lever ATS parser began storing
+sectioned `lists` content; for example, Spotify can mention PyTorch in a
+`Who You Are` section that was visible on the hosted ATS page but absent from the
+previous stored description.
+
+Root cause to remember: `linkedin/4430093058` had a full description mentioning
+Next.js, tRPC, Elasticsearch, React, PostgreSQL, Node.js, and TypeScript, but
+`job_technology_mentions.technologies` was `{}` from an earlier v1 extraction.
+The old pending query only selected rows with no `job_technology_mentions` row,
+so the empty result never self-healed. v2/v3 select missing rows, old extractor
+versions, and empty arrays with a filled description. If a future row has no
+tech tags despite obvious text, check `job_technology_mentions.extractor_version`
+and whether the description was backfilled after the first extraction.
+
+`TypeScript`, `React`, `Next.js`, `Node.js`, `PostgreSQL`, `Elasticsearch`, and
+`tRPC` are expected tags for modern full-stack Searchland-style roles. `tRPC` is
+included because it is a useful full-stack signal, unlike noisy test/build tools
+that should remain out of the top UI filter unless product evidence says
+otherwise.
+
+Set `JOB_CLASSIFIER_DISABLE_CLAUDE_FALLBACK=1` for bulk/model-only passes when
+Haiku fallback would be operationally risky. This is now the Adzuna Lambda
+default: Adzuna snippets are short/noisy, many rows fall below the artifact's
+high-confidence threshold, and a full daily batch can exceed Anthropic
+input-token/minute limits if every ambiguous row asks Claude. Use Haiku for
+focused audits and corrections, then use model-only classification to clear the
+bulk pending queue.
