@@ -35,7 +35,8 @@ changing classifier behavior.
   `git@github.com:winterchill-xyz/job-classifier.git` by
   `publish_to_repo.sh` and `.github/workflows/publish-job-classifier.yml`.
   Every standalone snapshot commit must use author/committer
-  `Valerii Iatsko <viatsko@viatsko.me>`.
+  `Valerii Iatsko <viatsko@viatsko.me>`. Local manual publishing can use
+  `GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519.viatsko -o IdentitiesOnly=yes"`.
 
 ## Labeling Rules
 

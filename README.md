@@ -2,6 +2,11 @@
 
 Versioned job relevance and discipline classification for winterchill.
 
+> **Research-only warning:** this model snapshot is for research and internal
+> experimentation only. It is not a hiring, employment, immigration, or legal
+> decision system and must not be used as the sole basis for decisions affecting
+> people or opportunities.
+
 Runtime code lives in `scrapers/job_classifier.py`. Model ownership lives here:
 
 - `taxonomy.yml` is the runtime label set.
@@ -123,6 +128,7 @@ Valerii Iatsko <viatsko@viatsko.me>
 Manual publish:
 
 ```bash
+GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519.viatsko -o IdentitiesOnly=yes" \
 JOB_CLASSIFIER_COMMIT_MESSAGE="chore: snapshot job classifier" \
   models/job_classifier/publish_to_repo.sh
 ```
