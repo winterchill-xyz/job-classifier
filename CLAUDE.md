@@ -61,6 +61,9 @@ changing classifier behavior.
   override that; only explicit embedded/firmware/robotics software ownership can.
 - Fire engineering and building/fire-safety consulting are non-software even
   when the description mentions software packages.
+- Low-voltage, control-panel, MCC, utilities, water, power, and industrial
+  electrical engineering-management roles are non-software even when they include
+  line management or performance-review responsibilities.
 - Process design engineering in water/wastewater/construction contexts is
   non-software. Process calculations, mass/heat/hydraulic balances, PFDs/P&IDs,
   process control philosophies, HAZOP/DSEAR, buildability, safe construction,

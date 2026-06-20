@@ -89,6 +89,9 @@ Runtime post-processing matters:
   embedded/firmware/robotics software roles.
 - Fire engineering and building/fire-safety consulting are non-software even
   when the description mentions using software packages.
+- Low-voltage, control-panel, MCC, utilities, water, power, and industrial
+  electrical engineering-management roles are non-software even when they include
+  line management or performance-review responsibilities.
 - Process design engineering in water/wastewater/construction contexts is
   non-software. Signals include process calculations, mass/heat/hydraulic
   balances, PFDs/P&IDs, process control philosophies, HAZOP/DSEAR, buildability,

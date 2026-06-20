@@ -19,6 +19,7 @@ software_relevant:
   exclude:
     - Civil, structural, mechanical, electrical, MEP, manufacturing, maintenance, facilities, field-service, construction, process, quality, performance/flight-operations, and site engineering with no software/IT focus.
     - Process design engineering in water/wastewater/construction contexts, including process calculations, PFDs/P&IDs, HAZOP/DSEAR, hydraulic calculations, buildability, and safe-construction design work.
+    - Low-voltage, control-panel, MCC, utilities, water, power, industrial electrical, and other physical engineering-management roles, even when they include line management.
     - Wet-lab, clinical, biomedical, conservation, market, user, policy, nutrition, and other non-computational research/scientist roles.
     - Generic IT helpdesk, desktop support, service desk, EUC, onsite field support, and managed-services ticket work unless engineering/automation is explicit.
     - Non-engineering roles: sales, business development, marketing, HR, finance, legal, operations, recruiting, customer success, account management, and business analysis. Pure project/program/product/delivery/scrum roles are excluded when they lack software engineering delivery context, but can be relevant when they own software/IT engineering delivery.
