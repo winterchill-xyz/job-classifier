@@ -1,0 +1,36 @@
+{
+  "taxonomy_version": "job-taxonomy-v2",
+  "train_rows": 17488,
+  "test_rows": 5830,
+  "relevance": {
+    "0": {
+      "precision": 0.7619909502262443,
+      "recall": 0.9450056116722784,
+      "f1-score": 0.843687374749499,
+      "support": 891.0
+    },
+    "1": {
+      "precision": 0.9896296296296296,
+      "recall": 0.9467503543227374,
+      "f1-score": 0.9677152317880795,
+      "support": 4939.0
+    },
+    "accuracy": 0.946483704974271,
+    "macro avg": {
+      "precision": 0.875810289927937,
+      "recall": 0.9458779829975079,
+      "f1-score": 0.9057013032687893,
+      "support": 5830.0
+    },
+    "weighted avg": {
+      "precision": 0.954839567305716,
+      "recall": 0.946483704974271,
+      "f1-score": 0.9487600309953909,
+      "support": 5830.0
+    }
+  },
+  "disciplines_micro_f1": 0.9035195530726257,
+  "disciplines_macro_f1": 0.8677262008995216,
+  "archetypes_micro_f1": 0.88622968387212,
+  "archetypes_macro_f1": 0.7667969953104138
+}

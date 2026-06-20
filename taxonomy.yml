@@ -1,0 +1,549 @@
+version: job-taxonomy-v2
+description: >
+  Software/IT relevance and multi-label disciplines for winterchill jobs.
+  Runtime classifiers must choose only from these labels. A job can have
+  multiple disciplines and multiple archetypes.
+
+software_relevant:
+  principle: >
+    Relevant jobs build, operate, secure, test, analyze, automate, integrate, or
+    lead software/IT systems. The word "engineer" alone is not enough: physical
+    engineering, facilities, field service, wet-lab research, helpdesk, and
+    non-engineering management are excluded unless there is explicit software,
+    data, cloud, automation, or production-systems ownership.
+  include:
+    - Software, web, mobile, data, ML/AI, quant/trading systems, platform, infrastructure, cloud, security, QA automation, embedded/robotics software, game, developer-experience, business-systems, developer-relations, and product-engineering roles.
+    - Engineering managers and engineering leadership whose teams build software, data, security, infrastructure, or IT systems.
+    - Technical solutions/customer/sales/implementation roles when they require building, integrating, scripting, APIs, cloud/data/security implementation, or production technical ownership.
+    - Application/platform/developer/trading/cloud support only when coding, automation, debugging, infrastructure, or production-systems ownership is explicit.
+  exclude:
+    - Civil, structural, mechanical, electrical, MEP, manufacturing, maintenance, facilities, field-service, construction, process, quality, performance/flight-operations, and site engineering with no software/IT focus.
+    - Wet-lab, clinical, biomedical, conservation, market, user, policy, nutrition, and other non-computational research/scientist roles.
+    - Generic IT helpdesk, desktop support, service desk, EUC, onsite field support, and managed-services ticket work unless engineering/automation is explicit.
+    - Non-engineering roles: sales, business development, marketing, HR, finance, legal, operations, recruiting, customer success, account management, and business analysis. Pure project/program/product/delivery/scrum roles are excluded when they lack software engineering delivery context, but can be relevant when they own software/IT engineering delivery.
+
+strong_positive_technology_signals:
+  languages:
+    - Python
+    - R
+    - Java
+    - JavaScript
+    - TypeScript
+    - C#
+    - C++
+    - Go
+    - Rust
+    - Kotlin
+    - Swift
+    - Scala
+    - Ruby
+    - PHP
+    - SQL
+    - Solidity
+    - C
+    - q/kdb+
+    - .NET
+    - Bash/Shell
+  web_and_product:
+    - React
+    - Next.js
+    - Vue
+    - Angular
+    - Svelte
+    - Node.js
+    - NestJS
+    - Express.js
+    - Spring Boot
+    - Django
+    - Flask
+    - FastAPI
+    - Ruby on Rails
+    - Laravel
+    - ASP.NET
+    - GraphQL
+    - REST APIs
+    - microservices
+    - distributed systems
+    - gRPC
+    - RabbitMQ
+    - Service Mesh
+  data_ai_cloud:
+    - AWS
+    - AWS Lambda
+    - AWS CDK
+    - S3
+    - EKS
+    - Azure
+    - AKS
+    - GCP
+    - GKE
+    - CloudFormation
+    - Kubernetes
+    - Docker
+    - Terraform
+    - Pulumi
+    - Helm
+    - Ansible
+    - Jenkins
+    - GitHub Actions
+    - GitLab CI
+    - Argo CD
+    - CircleCI
+    - Kafka
+    - Spark
+    - PySpark
+    - Flink
+    - Airflow
+    - dbt
+    - Snowflake
+    - Databricks
+    - BigQuery
+    - Redshift
+    - PostgreSQL
+    - MySQL
+    - SQL Server
+    - Oracle Database
+    - Redis
+    - MongoDB
+    - DynamoDB
+    - Cassandra
+    - Elasticsearch
+    - OpenSearch
+    - ClickHouse
+    - Neo4j
+    - pandas
+    - NumPy
+    - scikit-learn
+    - Jupyter
+    - Power BI
+    - Tableau
+    - Looker
+    - semantic layer
+    - Machine Learning
+    - Generative AI
+    - LLMs
+    - Anthropic Claude
+    - OpenAI API
+    - Azure OpenAI
+    - Google Gemini
+    - Amazon Bedrock
+    - RAG
+    - AI Agents
+    - prompt engineering
+    - LangGraph
+    - vector databases
+    - Pinecone
+    - Weaviate
+    - pgvector
+    - Qdrant
+    - FAISS
+    - ChromaDB
+    - LangChain
+    - LlamaIndex
+    - Hugging Face
+    - PyTorch
+    - TensorFlow
+    - JAX
+    - vLLM
+    - Ray
+    - MLOps
+    - MLflow
+    - Weights & Biases
+    - SageMaker
+    - Vertex AI
+    - Kubeflow
+    - NLP
+    - Computer Vision
+    - Hadoop
+    - HDFS
+    - Hive
+    - Trino/Presto
+    - Delta Lake
+    - Apache Iceberg
+    - AWS Glue
+    - AWS Kinesis
+    - Google Pub/Sub
+    - Azure Data Factory
+    - Microsoft Fabric
+    - Azure Data Lake
+    - Azure Cosmos DB
+    - Fivetran
+  systems_security_devops_testing:
+    - Linux
+    - Unix
+    - Windows Server
+    - Active Directory
+    - Entra
+    - Okta
+    - IAM
+    - TCP/IP
+    - DNS
+    - CDN
+    - HPC
+    - Slurm
+    - CUDA
+    - GPU kernels
+    - LLVM
+    - compiler
+    - runtime
+    - SRE
+    - CI/CD
+    - observability
+    - Prometheus
+    - Grafana
+    - Datadog
+    - OpenTelemetry
+    - ELK Stack
+    - CloudWatch
+    - Sentry
+    - New Relic
+    - PagerDuty
+    - Splunk
+    - application security
+    - cloud security
+    - cybersecurity
+    - DevSecOps
+    - AppSec
+    - SIEM
+    - EDR/XDR
+    - OAuth/OIDC
+    - SAML
+    - threat detection
+    - vulnerability management
+    - penetration testing
+    - SOC 2
+    - ISO 27001
+    - Selenium
+    - Playwright
+    - Cypress
+    - Jest
+    - Pytest
+    - Postman
+    - test automation
+    - Git
+    - Bazel
+    - Gradle
+    - Maven
+    - Nginx
+    - VMware
+  finance_trading:
+    - kdb+/q
+    - FIX
+    - Trading Systems
+    - Market Data
+    - Low Latency
+    - OMS/EMS/PMS
+    - Bloomberg
+    - Orchestrade
+    - Murex
+    - Calypso
+    - Fidessa
+    - Iress
+    - ION
+    - Aladdin
+    - eTrading
+    - FPGA
+  enterprise_systems:
+    - Salesforce
+    - Apex
+    - SOQL
+    - Lightning
+    - LWC
+    - Visualforce
+    - ServiceNow
+    - MuleSoft
+    - SAP
+    - Workday
+    - HRIS
+    - HCM
+    - Dynamics 365
+    - Power Platform
+    - Oracle Fusion
+    - NetSuite
+    - Business Central
+    - Appian
+    - OutSystems
+    - Mendix
+    - HubSpot
+    - Marketo
+    - Eloqua
+    - Braze
+  mobile_embedded_game:
+    - iOS
+    - Android
+    - Objective-C
+    - SwiftUI
+    - UIKit
+    - Jetpack Compose
+    - React Native
+    - Flutter
+    - Skia
+    - firmware
+    - Embedded Linux
+    - RTOS
+    - Zephyr
+    - FreeRTOS
+    - QNX
+    - Yocto
+    - Buildroot
+    - BSP
+    - device drivers
+    - kernel drivers
+    - I2C
+    - SPI
+    - UART
+    - CAN bus
+    - HIL
+    - ROS
+    - robotics
+    - autonomous systems
+    - FPGA
+    - RTL
+    - Verilog
+    - SystemVerilog
+    - VHDL
+    - Unity
+    - Unreal
+    - game engine
+    - gameplay
+    - rendering
+    - shader
+    - OpenGL
+    - Vulkan
+    - DirectX
+    - Lua
+
+strong_negative_non_software_signals:
+  physical_engineering:
+    - civil engineering
+    - structural engineering
+    - geotechnical
+    - drainage
+    - highways
+    - bridges
+    - rail
+    - water
+    - wastewater
+    - mechanical engineering
+    - electrical engineering
+    - MEP
+    - HVAC
+    - building services
+    - facilities
+    - chiller
+    - boiler
+    - refrigeration
+    - plant room
+    - fire suppression
+    - cooling systems
+    - HV
+    - LV
+    - substation
+    - transformer
+    - power distribution
+    - EICA
+    - 18th edition
+    - wiring regulations
+    - UPS
+    - generator
+  site_field_maintenance:
+    - site engineer
+    - section engineer
+    - field service
+    - service engineer
+    - commissioning
+    - installation
+    - repair
+    - breakdown
+    - PPM
+    - CMMS
+    - RAMS
+    - permits
+    - PPE
+    - multi-skilled
+    - shift engineer
+    - lift service
+    - data centre facilities
+  manufacturing_quality:
+    - manufacturing
+    - production
+    - tooling
+    - lean
+    - six sigma
+    - GMP
+    - CAPA
+    - validation
+    - supplier quality
+    - quality control
+    - inspection
+    - metrology
+    - non-conformance
+    - ISO 9001
+    - IATF
+    - AS9100
+  wet_lab_noncomputational_research:
+    - DMPK
+    - pharmacokinetics
+    - in vitro
+    - assay
+    - laboratory
+    - wet lab
+    - chemistry
+    - biology
+    - molecular
+    - protein
+    - cell culture
+    - clinical
+    - medical affairs
+    - pharmacology
+    - toxicology
+    - immunology
+    - nutritionist
+    - conservation scientist
+    - user researcher
+    - qualitative researcher
+    - market researcher
+  generic_support:
+    - desktop support
+    - service desk
+    - helpdesk
+    - end user
+    - EUC
+    - M365
+    - Office 365
+    - SCCM
+    - Intune
+    - tickets
+    - SLA
+    - ITIL
+    - 1st line
+    - 2nd line
+    - 3rd line
+  non_engineering_management:
+    - nontechnical project manager
+    - nontechnical programme manager
+    - nontechnical program manager
+    - nontechnical delivery manager
+    - nontechnical product manager
+    - nontechnical scrum master
+    - business analyst
+    - stakeholder management
+    - budget
+    - governance
+    - RAID
+    - PRINCE2
+    - PMP
+    - roadmap
+    - backlog
+
+disciplines:
+  Backend:
+    description: Server-side product, API, services, distributed systems, databases, or backend application work.
+    technologies: [Python, Java, Go, Rust, C#, .NET, Kotlin, Scala, Node.js, Spring Boot, SQL, PostgreSQL, MySQL, SQL Server, Redis, MongoDB, Cassandra, Elasticsearch, OpenSearch, Kafka, GraphQL, REST APIs, gRPC, RabbitMQ, microservices]
+    relevant: true
+  Frontend:
+    description: Browser UI, React/Vue/Angular, design systems, web application frontend work.
+    technologies: [JavaScript, TypeScript, React, Next.js, Vue, Angular, CSS, HTML, Webpack, Vite, design systems]
+    relevant: true
+  Full Stack:
+    description: Significant backend and frontend ownership in the same role.
+    technologies: [TypeScript, JavaScript, React, Next.js, Node.js, Python, Django, Ruby on Rails, PostgreSQL, GraphQL, REST APIs, APIs]
+    relevant: true
+  Mobile:
+    description: iOS, Android, React Native, Flutter, or mobile platform engineering.
+    technologies: [Swift, Objective-C, Kotlin, Java, Android, iOS, React Native, Flutter]
+    relevant: true
+  Data Engineering:
+    description: Data pipelines, ETL/ELT, warehouses, analytics engineering, streaming data, Airflow/dbt/Spark, or production data products.
+    technologies: [SQL, Python, Spark, PySpark, Hadoop, HDFS, Hive, Airflow, dbt, Kafka, Snowflake, Databricks, BigQuery, Redshift, Flink, Trino/Presto]
+    relevant: true
+  Data Science / Analytics:
+    description: Data science, BI, decision science, product analytics, experimentation, statistical modeling, analytics engineering, semantic layers, or data products. Exclude pure reporting/business analyst work without technical data ownership.
+    technologies: [Python, R, SQL, pandas, NumPy, scikit-learn, Jupyter, experimentation, causal inference, Power BI, Tableau, Looker, semantic layer]
+    relevant: true
+  ML / AI Engineering:
+    description: Machine learning systems, LLM applications, MLOps, model serving, applied AI implementation, or production AI products.
+    technologies: [Python, PyTorch, TensorFlow, JAX, scikit-learn, pandas, NumPy, LLMs, Anthropic Claude, OpenAI API, Azure OpenAI, Google Gemini, Amazon Bedrock, Generative AI, RAG, AI Agents, LangGraph, embeddings, vector databases, Pinecone, Weaviate, pgvector, Qdrant, FAISS, ChromaDB, LangChain, LlamaIndex, Hugging Face, vLLM, Ray, MLflow, Weights & Biases, SageMaker, Vertex AI, MLOps, CUDA]
+    relevant: true
+  Research / Applied Science:
+    description: Computational, ML, AI, quant, algorithms, optimization, robotics, or data-science research. Exclude biomedical, clinical, wet-lab, market, user, policy, nutrition, and conservation research unless software/ML/data engineering is explicit.
+    technologies: [algorithms, optimization, applied scientist, research engineer, research scientist, data scientist, ML research, AI research, quant research, simulation]
+    relevant: true
+  Platform / Infrastructure:
+    description: Internal platforms, cloud infrastructure, systems, networking, databases, identity, compute, storage, reliability platforms, or infrastructure software.
+    technologies: [AWS, Azure, GCP, Kubernetes, Docker, Terraform, Pulumi, Helm, Ansible, Linux, Unix, Windows Server, IAM, Active Directory, Entra, Okta, TCP/IP, DNS, CDN, PostgreSQL, Oracle Database, SQL Server, HPC, Slurm, VMware, Nginx]
+    relevant: true
+  DevOps / SRE:
+    description: Site reliability, DevOps, CI/CD, observability, incident response, production operations engineering, or automation-heavy production support.
+    technologies: [CI/CD, Kubernetes, Terraform, GitHub Actions, GitLab CI, Jenkins, Argo CD, CircleCI, Prometheus, Grafana, Datadog, OpenTelemetry, ELK Stack, CloudWatch, Sentry, New Relic, PagerDuty, incident response, reliability, production support automation]
+    relevant: true
+  Security Engineering:
+    description: Application security, cloud security, security tooling, detection engineering, product security, IAM security, or secure infrastructure.
+    technologies: [AppSec, cloud security, IAM, OAuth/OIDC, SAML, SIEM, Splunk, EDR/XDR, threat detection, vulnerability management, penetration testing, DevSecOps, SOC 2, ISO 27001, secure coding, detection engineering]
+    relevant: true
+  QA / Test Automation:
+    description: Software quality engineering, test automation, SDET, performance testing, tooling-heavy QA. Exclude manual-only QA without automation or engineering ownership.
+    technologies: [Selenium, Playwright, Cypress, Jest, Pytest, automation frameworks, performance testing, SDET]
+    relevant: true
+  Developer Experience:
+    description: Build systems, SDKs, developer tooling, internal productivity, CI ergonomics, CLIs, and engineering enablement platforms.
+    technologies: [Bazel, Buck, Gradle, Maven, GitHub Actions, GitLab CI, CI/CD, SDKs, CLIs, build systems, developer tooling, internal platforms]
+    relevant: true
+  Developer Relations / Technical Content:
+    description: Developer advocacy, developer education, technical writing, docs engineering, sample apps, API/SDK demos, and docs-as-code. Exclude generic content, marketing, community, or nontechnical writing.
+    technologies: [SDKs, APIs, sample apps, docs-as-code, developer education, demos, technical writing, documentation engineering]
+    relevant: true
+  Engineering Management:
+    description: People management or senior leadership for software, data, ML, platform, security, infrastructure, or IT engineering teams.
+    technologies: [software engineering teams, platform teams, data teams, ML teams, cloud teams, security teams]
+    relevant: true
+  Solutions / Customer Engineering:
+    description: Technical pre-sales, customer engineering, forward-deployed engineering, solution architecture, implementation engineering, professional services engineering, or sales engineering with software/cloud/data/API/security ownership. Exclude pure account management, customer success, engagement management, and nontechnical consulting.
+    technologies: [APIs, SDKs, cloud architecture, data platforms, security platforms, integrations, solution architecture, forward deployed, implementation engineering]
+    relevant: true
+  Product Engineering:
+    description: IC product-facing software engineering where the stack is broad or unspecified. Do not apply to product/project/program/delivery managers unless they are explicit engineering managers.
+    technologies: [product development, user-facing software, SaaS, APIs, web applications, experimentation]
+    relevant: true
+  Enterprise / Business Systems Engineering:
+    description: Engineering or development for enterprise SaaS/business platforms and integrations.
+    technologies: [Salesforce, Apex, SOQL, Lightning, LWC, ServiceNow, MuleSoft, SAP, Workday, Dynamics 365, Power Platform, Oracle Fusion, NetSuite, Business Central, Appian, OutSystems, Mendix]
+    relevant: true
+  Embedded / Robotics:
+    description: Firmware, embedded software, FPGA software, robotics software, autonomous systems, hardware-adjacent software, drivers, HIL, or RTOS work. Exclude hardware-only, electrical, mechanical, and building-services roles.
+    technologies: [C, C++, Rust, firmware, Embedded Linux, RTOS, Zephyr, FreeRTOS, QNX, Yocto, Buildroot, robotics, ROS, autonomous systems, FPGA, RTL, Verilog, SystemVerilog, VHDL, I2C, SPI, UART, CAN bus, HIL, device drivers, kernel drivers]
+    relevant: true
+  Game Engineering:
+    description: Gameplay, engine, tools, graphics, rendering, online services, or game-platform engineering.
+    technologies: [C++, C#, Unity, Unreal, gameplay, game engine, graphics, rendering, shader, OpenGL, Vulkan, DirectX, Lua, online services]
+    relevant: true
+  Quant / Trading Systems Engineering:
+    description: Quantitative development, trading systems, low-latency engineering, market data, pricing/risk systems, electronic trading, alpha/research tooling, and front-office engineering.
+    technologies: [C++, Java, Python, q/kdb+, FIX, Trading Systems, Market Data, Low Latency, OMS/EMS/PMS, Bloomberg, Orchestrade, Murex, Calypso, Fidessa, ION, Aladdin, eTrading, FPGA]
+    relevant: true
+
+archetypes:
+  Founding / Generalist:
+    description: Early-stage founding/generalist engineering role, often across product, infrastructure, customer, and operations work. Use for explicit founding engineer/developer/CTO/generalist titles, first-engineer roles, engineer #1, or first engineering hire signals. Does not imply a discipline by itself.
+  Quant Researcher:
+    description: Quantitative research role focused on alpha, signals, systematic strategies, portfolio construction, market microstructure, forecasting, statistical arbitrage, or backtesting research. Pair with Quant / Trading Systems Engineering and usually Research / Applied Science.
+  Quant Engineer / Developer:
+    description: Quant developer, quant engineer, trading developer, strat developer, or front-office engineering role implementing trading, pricing/risk, market-data, backtesting, execution, q/kdb+, FIX, or low-latency systems. Pair with Quant / Trading Systems Engineering and relevant implementation disciplines.
+  Research Scientist:
+    description: Computational research scientist role creating or evaluating novel models, algorithms, AI/ML methods, robotics/simulation methods, optimization, or scientific software research. Exclude wet-lab, clinical, market, user, policy, nutrition, and conservation research unless software/ML/data work is explicit.
+  Research Engineer:
+    description: Research engineering role that builds ML/AI/research systems, training and evaluation infrastructure, model implementations, simulation tooling, experiment platforms, or research prototypes. Often pairs ML / AI Engineering with Research / Applied Science or Platform / Infrastructure.
+  Applied Scientist:
+    description: Applied scientist role using ML, statistics, optimization, causal inference, experimentation, recommender/search/ranking, or decision science to build product or platform systems. Pair with ML / AI Engineering, Research / Applied Science, Data Science / Analytics, or Product Engineering as appropriate.
+  Senior IC:
+    description: Staff, principal, distinguished, fellow, senior member of technical staff, or similarly senior individual-contributor role. Does not include people leadership by itself.
+  Graduate / Intern:
+    description: Graduate, intern, apprentice, placement, junior, entry-level, or new-grad role.
+  Contract:
+    description: Contract, freelance, outside/inside IR35, fixed-term contractor, day-rate, or perm-or-contract role.
+  People Leadership:
+    description: Manager, director, head, VP, CTO, or accountable people/team leadership role.
+  Tech Lead:
+    description: Lead engineer, technical lead, engineering lead, or team lead when the role is IC or hybrid technical direction rather than clear people management.
+  Architect:
+    description: Software, cloud, data, security, platform, enterprise, or solutions architecture. Pair with the underlying discipline rather than using it alone.
