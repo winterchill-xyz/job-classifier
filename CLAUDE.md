@@ -59,9 +59,18 @@ changing classifier behavior.
   facilities, field-service, flight-operations performance, and other physical
   engineering titles are non-software. Founding/senior/lead wording does not
   override that; only explicit embedded/firmware/robotics software ownership can.
-- `Engineering Management` needs a management title or clear people-management
-  evidence for software/data/platform/security/ML teams. Lead/Staff/Principal IC
-  titles without that evidence should stay `Tech Lead` / `Senior IC`.
+- Fire engineering and building/fire-safety consulting are non-software even
+  when the description mentions software packages.
+- Process design engineering in water/wastewater/construction contexts is
+  non-software. Process calculations, mass/heat/hydraulic balances, PFDs/P&IDs,
+  process control philosophies, HAZOP/DSEAR, buildability, safe construction,
+  and ICE/IET/IMechE/IChemE context are negative signals.
+- `Engineering Management` needs software-management context and clear
+  people-management evidence for software/data/platform/security/ML teams.
+  A generic manager title alone is not enough. Explicit senior engineering
+  leadership titles such as Head/Director/VP/CTO of Engineering are the narrow
+  exception. Lead/Staff/Principal IC titles without that evidence should stay
+  `Tech Lead` / `Senior IC`.
 
 ## Archetypes
 

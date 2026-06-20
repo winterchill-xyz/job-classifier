@@ -66,10 +66,12 @@ Runtime post-processing matters:
 - Blank descriptions are labelled non-software with `no-description-v1`; when a
   description is later filled, that rule label is considered stale and the row is
   reclassified.
-- `Engineering Management` requires either a manager/head/director/VP-style title
-  or strong people-management evidence in the description, such as line
-  management, direct reports, hiring/performance accountability, or managing a
-  team of engineers. Lead/Staff/Principal IC titles without those signals stay
+- `Engineering Management` requires software-management context plus strong
+  people-management evidence, such as line management, direct reports,
+  hiring/performance accountability, or managing a team of software/data/platform
+  engineers. A generic manager title alone is not enough. Explicit senior
+  engineering-leadership titles such as Head/Director/VP/CTO of Engineering are
+  the narrow exception. Lead/Staff/Principal IC titles without those signals stay
   `Tech Lead` / `Senior IC`.
 - Remote status is deterministic (`remote`, `hybrid`, `onsite`, `unknown`) and
   lives in `job_remote_labels`.
@@ -85,6 +87,12 @@ Runtime post-processing matters:
   operations/performance, and other physical engineering roles are non-software
   even when they are founding/senior/lead roles, unless they are explicitly
   embedded/firmware/robotics software roles.
+- Fire engineering and building/fire-safety consulting are non-software even
+  when the description mentions using software packages.
+- Process design engineering in water/wastewater/construction contexts is
+  non-software. Signals include process calculations, mass/heat/hydraulic
+  balances, PFDs/P&IDs, process control philosophies, HAZOP/DSEAR, buildability,
+  safe construction, and ICE/IET/IMechE/IChemE-style chartership context.
 - Business development is not software engineering, including SaaS/software-sales
   business-development titles. Keep Solutions / Customer Engineering for roles
   that actually build/integrate/implement technical systems.

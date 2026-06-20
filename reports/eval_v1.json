@@ -1,36 +1,36 @@
 {
   "taxonomy_version": "job-taxonomy-v2",
-  "train_rows": 17488,
-  "test_rows": 5830,
+  "train_rows": 17498,
+  "test_rows": 5833,
   "relevance": {
     "0": {
-      "precision": 0.7619909502262443,
-      "recall": 0.9450056116722784,
-      "f1-score": 0.843687374749499,
-      "support": 891.0
+      "precision": 0.8345498783454988,
+      "recall": 0.953660797034291,
+      "f1-score": 0.8901384083044983,
+      "support": 1079.0
     },
     "1": {
-      "precision": 0.9896296296296296,
-      "recall": 0.9467503543227374,
-      "f1-score": 0.9677152317880795,
-      "support": 4939.0
+      "precision": 0.9891304347826086,
+      "recall": 0.9570887673538073,
+      "f1-score": 0.9728458413512936,
+      "support": 4754.0
     },
-    "accuracy": 0.946483704974271,
+    "accuracy": 0.9564546545516887,
     "macro avg": {
-      "precision": 0.875810289927937,
-      "recall": 0.9458779829975079,
-      "f1-score": 0.9057013032687893,
-      "support": 5830.0
+      "precision": 0.9118401565640537,
+      "recall": 0.9553747821940491,
+      "f1-score": 0.931492124827896,
+      "support": 5833.0
     },
     "weighted avg": {
-      "precision": 0.954839567305716,
-      "recall": 0.946483704974271,
-      "f1-score": 0.9487600309953909,
-      "support": 5830.0
+      "precision": 0.9605358144507653,
+      "recall": 0.9564546545516887,
+      "f1-score": 0.9575464550565066,
+      "support": 5833.0
     }
   },
-  "disciplines_micro_f1": 0.9035195530726257,
-  "disciplines_macro_f1": 0.8677262008995216,
-  "archetypes_micro_f1": 0.88622968387212,
-  "archetypes_macro_f1": 0.7667969953104138
+  "disciplines_micro_f1": 0.9157691391674826,
+  "disciplines_macro_f1": 0.8888619286397501,
+  "archetypes_micro_f1": 0.89280868385346,
+  "archetypes_macro_f1": 0.773311207459625
 }
