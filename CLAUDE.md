@@ -87,6 +87,11 @@ PY
 - Blank descriptions are rule-labelled non-software with `no-description-v1`.
   `_fetch_pending` reclassifies them when a description later appears.
 - For non-software rows, both `disciplines` and `archetypes` must be empty.
+- UK security-clearance tagging is separate from software relevance. Do not
+  reject a software role just because it needs SC/DV/BPSS/UKSV clearance; the
+  deterministic `job_clearance_labels` side table marks it with
+  `clearance_required`, `clearance_level`, and `clearance_score`, and the
+  frontend hides those rows by default unless `?clearance=1` is set.
 - Product/project/program/delivery/scrum titles can be software related when
   the description shows software engineering delivery context. Do not hard
   reject them by title alone.
@@ -128,6 +133,22 @@ PY
   leadership titles such as Head/Director/VP/CTO of Engineering are the narrow
   exception. Lead/Staff/Principal IC titles without that evidence should stay
   `Tech Lead` / `Senior IC`.
+
+## Security Clearance Labels
+
+`scrapers/job_classifier.py --label-clearance` fills `job_clearance_labels`.
+It is rule-based, versioned by `job-clearance-rules-v2`, and runs automatically
+inside `classify_pending` before relevance classification. It treats explicit
+requirements or eligibility-to-obtain wording as filter-worthy, including:
+`SC clearance`, `SC cleared`, `Security Check`, `DV`, `Developed Vetting`, `eDV`,
+`BPSS`, `CTC`, `NPPV`, `UKSV`, `UK Security Vetting`, government/MoD clearance,
+and broad `security clearance required` / `eligible to obtain security
+clearance` phrases. A small negation guard handles wording such as "no security
+clearance required". Keep BPSS as `clearance_level='bpss'`: it is lower-friction
+than SC/DV, but users still asked to hide clearance/check-required roles by
+default. Bare `CTC` is not enough because finance employers use it for unrelated
+business units such as "Cybersecurity & Technology Controls"; require Counter
+Terrorist Check or clearance/check/vetting context.
 
 ## Archetypes
 
