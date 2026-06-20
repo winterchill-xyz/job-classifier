@@ -1,36 +1,36 @@
 {
   "taxonomy_version": "job-taxonomy-v2",
-  "train_rows": 17498,
-  "test_rows": 5833,
+  "train_rows": 17501,
+  "test_rows": 5834,
   "relevance": {
     "0": {
-      "precision": 0.847233691164327,
-      "recall": 0.9438822447102115,
-      "f1-score": 0.8929503916449086,
-      "support": 1087.0
+      "precision": 0.8387888707037643,
+      "recall": 0.9335154826958105,
+      "f1-score": 0.8836206896551724,
+      "support": 1098.0
     },
     "1": {
-      "precision": 0.9868022501081782,
-      "recall": 0.9610198061525496,
-      "f1-score": 0.9737403928266439,
-      "support": 4746.0
+      "precision": 0.9841717259323504,
+      "recall": 0.9584037162162162,
+      "f1-score": 0.9711168164313222,
+      "support": 4736.0
     },
-    "accuracy": 0.9578261614949426,
+    "accuracy": 0.953719574905725,
     "macro avg": {
-      "precision": 0.9170179706362527,
-      "recall": 0.9524510254313805,
-      "f1-score": 0.9333453922357763,
-      "support": 5833.0
+      "precision": 0.9114802983180573,
+      "recall": 0.9459595994560134,
+      "f1-score": 0.9273687530432473,
+      "support": 5834.0
     },
     "weighted avg": {
-      "precision": 0.9607931598335397,
-      "recall": 0.9578261614949426,
-      "f1-score": 0.9586848928635809,
-      "support": 5833.0
+      "precision": 0.9568096458773302,
+      "recall": 0.953719574905725,
+      "f1-score": 0.9546494274700242,
+      "support": 5834.0
     }
   },
-  "disciplines_micro_f1": 0.9148094147052698,
-  "disciplines_macro_f1": 0.8867855725502218,
-  "archetypes_micro_f1": 0.8873485554520038,
-  "archetypes_macro_f1": 0.7337788971102747
+  "disciplines_micro_f1": 0.9166425698588365,
+  "disciplines_macro_f1": 0.8898798646236514,
+  "archetypes_micro_f1": 0.8876221498371335,
+  "archetypes_macro_f1": 0.7392249073879585
 }

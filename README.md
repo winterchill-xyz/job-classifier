@@ -30,7 +30,7 @@ Production Lambdas first look for a bundled artifact at:
 The path can be overridden with `JOB_CLASSIFIER_MODEL_PATH`. If no artifact is
 present, `scrapers/job_classifier.py` falls back to Claude Haiku when
 `ANTHROPIC_API_KEY` is configured. The current promoted artifact is
-`artifacts/job_classifier_v1.joblib`, trained from 23,275 Claude/rule/ML labels.
+`artifacts/job_classifier_v1.joblib`, trained from 23,335 Claude/rule/ML labels.
 See `reports/eval_v1.json` for the holdout report; negative/non-software recall
 is still thinner than positive recall because the labelled set has fewer negative
 examples. The trainer caps each TF-IDF vectorizer at 50k features and uses
@@ -52,7 +52,7 @@ Each labeled row should look like:
   --out models/job_classifier/labels/job_training_dataset_v1.parquet
 ```
 
-The v1 snapshot currently contains 23,275 rows from all source tables
+The v1 snapshot currently contains 23,335 rows from all source tables
 (`linkedin_jobs`, `indeed_jobs`, `ats_jobs`, `adzuna_jobs`, `reed_jobs`), with
 full descriptions and joined `job_classifications`, `job_technology_mentions`,
 and `job_remote_labels`.
@@ -96,6 +96,9 @@ Runtime post-processing matters:
   non-software. Signals include process calculations, mass/heat/hydraulic
   balances, PFDs/P&IDs, process control philosophies, HAZOP/DSEAR, buildability,
   safe construction, and ICE/IET/IMechE/IChemE-style chartership context.
+- Teaching, tutoring, trainer, curriculum, and education-practitioner roles are
+  non-software unless the role is explicitly software engineering, computer
+  science, coding, developer education, or technical training.
 - Business development is not software engineering, including SaaS/software-sales
   business-development titles. Keep Solutions / Customer Engineering for roles
   that actually build/integrate/implement technical systems.
@@ -104,6 +107,9 @@ Runtime post-processing matters:
   Gemini, Bedrock, LangGraph, RAG, AI Agents, vector stores, Fabric, Iceberg,
   Glue, Delta Lake, and related data/AI platforms are extracted; low-signal
   framework/test-tool clutter should not be promoted to the top UI row.
+  `job-tech-extractor-v2` reprocesses rows from older extractor versions and
+  rows with `{}` technologies once a description exists, so description backfills
+  can add tags such as TypeScript instead of staying empty.
 
 ## Train
 

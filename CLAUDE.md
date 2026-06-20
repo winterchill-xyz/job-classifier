@@ -68,6 +68,9 @@ changing classifier behavior.
   non-software. Process calculations, mass/heat/hydraulic balances, PFDs/P&IDs,
   process control philosophies, HAZOP/DSEAR, buildability, safe construction,
   and ICE/IET/IMechE/IChemE context are negative signals.
+- Teaching, tutoring, trainer, curriculum, and education-practitioner roles are
+  non-software unless the actual role is software engineering, computer science,
+  coding, developer education, or technical training.
 - `Engineering Management` needs software-management context and clear
   people-management evidence for software/data/platform/security/ML teams.
   A generic manager title alone is not enough. Explicit senior engineering
@@ -107,3 +110,9 @@ Meaningful AI/data terms currently include Claude, LLMs, OpenAI API, Azure
 OpenAI, Gemini, Bedrock, LangGraph, RAG, AI Agents, PyTorch, Ray, vector stores,
 Microsoft Fabric, Delta Lake, Iceberg, Glue, Kinesis, Pub/Sub, Cosmos DB, Azure
 Data Lake, and Fivetran.
+
+Technology extraction version `job-tech-extractor-v2` reprocesses rows from
+older extractor versions and rows that have an empty technology array despite a
+filled description. This is intentional: a listing can first arrive without a
+description, get `{}` stamped, then later gain text with technologies such as
+TypeScript.

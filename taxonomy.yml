@@ -17,6 +17,7 @@ software_relevant:
     - Technical solutions/customer/sales/implementation roles when they require building, integrating, scripting, APIs, cloud/data/security implementation, or production technical ownership.
     - Application/platform/developer/trading/cloud support only when coding, automation, debugging, infrastructure, or production-systems ownership is explicit.
   exclude:
+    - Teaching, tutoring, trainer, curriculum, and education-practitioner roles with no software engineering, computer science, coding, developer education, or technical training ownership.
     - Civil, structural, mechanical, electrical, MEP, manufacturing, maintenance, facilities, field-service, construction, process, quality, performance/flight-operations, and site engineering with no software/IT focus.
     - Process design engineering in water/wastewater/construction contexts, including process calculations, PFDs/P&IDs, HAZOP/DSEAR, hydraulic calculations, buildability, and safe-construction design work.
     - Low-voltage, control-panel, MCC, utilities, water, power, industrial electrical, and other physical engineering-management roles, even when they include line management.
@@ -49,6 +50,7 @@ strong_positive_technology_signals:
   web_and_product:
     - React
     - Next.js
+    - tRPC
     - Vue
     - Angular
     - Svelte
@@ -445,11 +447,11 @@ disciplines:
     relevant: true
   Frontend:
     description: Browser UI, React/Vue/Angular, design systems, web application frontend work.
-    technologies: [JavaScript, TypeScript, React, Next.js, Vue, Angular, CSS, HTML, Webpack, Vite, design systems]
+    technologies: [JavaScript, TypeScript, React, Next.js, tRPC, Vue, Angular, CSS, HTML, Webpack, Vite, design systems]
     relevant: true
   Full Stack:
     description: Significant backend and frontend ownership in the same role.
-    technologies: [TypeScript, JavaScript, React, Next.js, Node.js, Python, Django, Ruby on Rails, PostgreSQL, GraphQL, REST APIs, APIs]
+    technologies: [TypeScript, JavaScript, React, Next.js, tRPC, Node.js, Python, Django, Ruby on Rails, PostgreSQL, GraphQL, REST APIs, APIs]
     relevant: true
   Mobile:
     description: iOS, Android, React Native, Flutter, or mobile platform engineering.
