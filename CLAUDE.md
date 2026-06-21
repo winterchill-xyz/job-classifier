@@ -159,7 +159,14 @@ Archetypes are role shapes and can be combined with multiple disciplines:
   research. Pair with Quant and usually Research / Applied Science.
 - `Quant Engineer / Developer`: quant/trading/strat developer or engineer,
   front-office engineering, FIX, q/kdb+, market data, pricing/risk, execution,
-  low-latency, or backtesting platforms.
+  low-latency, or backtesting platforms. It requires finance/trading/market
+  context. Do not use it for generic order-management platforms, generic
+  optimization, non-finance low-latency systems, ecommerce/retail systems, or
+  generic AI/data engineering roles.
+- `Quant Trader`: not software by default. Include only if the role is really a
+  coding-heavy quant/research/trading-systems role building models, execution,
+  backtesting, pricing/risk, or market-data systems; otherwise it belongs off
+  the software board.
 - `Research Scientist`: computational/AI/ML/robotics/optimization research.
   Exclude wet-lab, clinical, market, user, policy, nutrition, and conservation
   research unless software/ML/data work is explicit.

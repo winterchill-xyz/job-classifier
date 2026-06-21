@@ -522,7 +522,7 @@ disciplines:
     technologies: [C++, C#, Unity, Unreal, gameplay, game engine, graphics, rendering, shader, OpenGL, Vulkan, DirectX, Lua, online services]
     relevant: true
   Quant / Trading Systems Engineering:
-    description: Quantitative development, trading systems, low-latency engineering, market data, pricing/risk systems, electronic trading, alpha/research tooling, and front-office engineering.
+    description: Finance-market quantitative development, trading systems, low-latency trading engineering, market data, pricing/risk systems, electronic trading, alpha/research tooling, and front-office engineering. Do not use for generic order management, generic optimization, generic data/AI platforms, retail/ecommerce systems, or non-finance roles.
     technologies: [C++, Java, Python, q/kdb+, FIX, Trading Systems, Market Data, Low Latency, OMS/EMS/PMS, Bloomberg, Orchestrade, Murex, Calypso, Fidessa, ION, Aladdin, eTrading, FPGA]
     relevant: true
 
@@ -532,7 +532,7 @@ archetypes:
   Quant Researcher:
     description: Quantitative research role focused on alpha, signals, systematic strategies, portfolio construction, market microstructure, forecasting, statistical arbitrage, or backtesting research. Pair with Quant / Trading Systems Engineering and usually Research / Applied Science.
   Quant Engineer / Developer:
-    description: Quant developer, quant engineer, trading developer, strat developer, or front-office engineering role implementing trading, pricing/risk, market-data, backtesting, execution, q/kdb+, FIX, or low-latency systems. Pair with Quant / Trading Systems Engineering and relevant implementation disciplines.
+    description: Finance-market quant developer, quant engineer, trading developer, strat developer, or front-office engineering role implementing trading, pricing/risk, market-data, backtesting, execution, q/kdb+, FIX, or low-latency trading systems. Pair with Quant / Trading Systems Engineering and relevant implementation disciplines. Do not use for ordinary software/data/AI roles without finance/trading/market context.
   Research Scientist:
     description: Computational research scientist role creating or evaluating novel models, algorithms, AI/ML methods, robotics/simulation methods, optimization, or scientific software research. Exclude wet-lab, clinical, market, user, policy, nutrition, and conservation research unless software/ML/data work is explicit.
   Research Engineer:
